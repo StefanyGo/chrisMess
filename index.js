@@ -2,6 +2,7 @@ const button1 = document.querySelector('button')
 const button2 = document.querySelector('#r')
 const statement1 = document.querySelector('h1')
 const statement2 = document.querySelector('#mc')
+const list = document.querySelector('#list')
 var one_clicked = false
 var two_clicked = false
 
@@ -14,6 +15,10 @@ function check(){
     const camel = first.toLowerCase() + last.charAt(0).toUpperCase() + last.substr(1, last.length).toLowerCase()
     const rev = reverseString(last).toLowerCase() + reverseString(first).toLowerCase()
     output.textContent = 'Your camelCase is ' + camel + ' and your reverse is ' + rev;
+    const items = document.createElement('li')
+    items.textContent = first + last
+    
+    list.appendChild(items)
 }
 
 function reverseString(str) {
